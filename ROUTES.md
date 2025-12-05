@@ -1,0 +1,2 @@
+*/shorten*
+argument - ( longUrl )
