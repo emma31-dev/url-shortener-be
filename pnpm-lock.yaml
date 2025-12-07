@@ -9,16 +9,16 @@ importers:
   .:
     dependencies:
       '@elysiajs/node':
-        specifier: '1'
+        specifier: ^1.4.2
         version: 1.4.2(elysia@1.4.18(@sinclair/typebox@0.34.41)(exact-mirror@0.2.5(@sinclair/typebox@0.34.41))(file-type@21.1.1)(openapi-types@12.1.3)(typescript@5.9.3))
       '@prisma/client':
-        specifier: ^6.0.0
+        specifier: ^6.19.0
         version: 6.19.0(prisma@6.19.0(typescript@5.9.3))(typescript@5.9.3)
       dotenv:
-        specifier: ^16.0.0
+        specifier: ^16.6.1
         version: 16.6.1
       elysia:
-        specifier: '1'
+        specifier: ^1.4.18
         version: 1.4.18(@sinclair/typebox@0.34.41)(exact-mirror@0.2.5(@sinclair/typebox@0.34.41))(file-type@21.1.1)(openapi-types@12.1.3)(typescript@5.9.3)
       git:
         specifier: ^0.1.5
@@ -31,7 +31,7 @@ importers:
         specifier: ^24.10.1
         version: 24.10.1
       prisma:
-        specifier: ^6.0.0
+        specifier: ^6.19.0
         version: 6.19.0(typescript@5.9.3)
       ts-node:
         specifier: ^10.9.2

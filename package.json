@@ -1,21 +1,21 @@
 {
-  "name": "test",
+  "name": "url-shortener-be",
   "type": "module",
   "private": true,
   "scripts": {
     "start": "node main.js"
   },
   "dependencies": {
-    "@elysiajs/node": "1",
-    "@prisma/client": "^6.0.0",
-    "dotenv": "^16.0.0",
-    "elysia": "1",
+    "@elysiajs/node": "^1.4.2",
+    "@prisma/client": "^6.19.0",
+    "dotenv": "^16.6.1",
+    "elysia": "^1.4.18",
     "git": "^0.1.5",
     "nanoid": "^5.1.6"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
-    "prisma": "^6.0.0",
+    "prisma": "^6.19.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

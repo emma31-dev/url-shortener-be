@@ -2,9 +2,15 @@ import "dotenv/config";
 import { Elysia, t } from "elysia";
 import { PrismaClient } from "./generated/client.ts";
 import { nanoid } from "nanoid";
+import { createServer } from "http";
 
-const prisma = new PrismaClient({});
+const prisma = new PrismaClient();
 const app = new Elysia();
+const server = createServer(app.fetch);
+
+server.listen(3000, () => {
+  console.log(`URL Shortener service is running`);
+});
 
 // Endpoint to create a shortened URL
 app.post(
@@ -13,7 +19,7 @@ app.post(
     const shortCode = nanoid(8);
 
     try {
-      const newUrl = await prisma.link.create({
+      const link = await prisma.link.create({
         data: {
           shortCode: shortCode,
           longUrl: body.url
@@ -22,7 +28,7 @@ app.post(
       set.status = 201;
       return {
         message: "Short URL created successfully",
-        shortUrl: `${process.env.URL}${newUrl.shortCode}`,
+        shortUrl: `${process.env.URL}/${newUrl.shortCode}`,
         longUrl: newUrl.longUrl
     };
     } catch (error) {
@@ -74,9 +80,12 @@ app.get(
   }
 );
 
-import { createServer } from "http";
-
-const server = createServer(app.fetch);
-server.listen(3000, () => {
-  console.log(`URL Shortener service is running on http://localhost:3000`);
-});
+app.get(
+  "/test",
+  () => {
+    console.log("test req recieved")
+    return {
+      message: "server is active"
+    }
+  }
+)
